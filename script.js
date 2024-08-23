@@ -6,41 +6,32 @@ function showPopup() {
 }
 
 function response(answer) {
-    const popup = document.getElementById('popup');
     const popupMessage = document.getElementById('popup-message');
 
     if (answer === 'no') {
         popupMessage.textContent = "Wrong!! Try again love";
     } else if (answer === 'yes') {
         popupMessage.textContent = "YAAAYY";
-        startConfetti();
-        // Hide the popup after displaying the success message
-        setTimeout(() => {
-            popup.style.display = 'none';
-        }, 1000); // Delay to allow time for the message to be visible before hiding
+        // Hide Yes/No buttons
+        const buttons = document.querySelectorAll('#popup button');
+        buttons.forEach(button => button.style.display = 'none');
 
-        // Remove event listeners to prevent the popup from appearing again
-        document.getElementById('envelope').removeEventListener('click', showPopup);
-        // Clear the popup content
-        document.getElementById('popup').innerHTML = '';
+        // Start constant red confetti
+        startConfetti();
     }
 }
 
 function startConfetti() {
-    // Start a continuous stream of confetti
-    confettiInterval = setInterval(() => {
+    // Clear any previous intervals if already running
+    if (confettiInterval) clearInterval(confettiInterval);
+
+    // Start a continuous stream of red confetti
+    confettiInterval = setInterval(function () {
         confetti({
             particleCount: 100,
             spread: 70,
             origin: { y: 0.6 },
-            shapes: ['circle', 'square', 'heart'], // Adding hearts to the confetti shapes
-            colors: ['#ff0000', '#ff9999', '#ffccff']
+            colors: ['#ff0000']  // Set confetti color to red
         });
-    }, 1000); // Adjust the interval as needed
+    }, 500); // Adjust the interval time to control the frequency of confetti
 }
-
-// Optionally, you can include a function to stop the confetti if desired
-function stopConfetti() {
-    clearInterval(confettiInterval);
-}
- 

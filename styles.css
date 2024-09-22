@@ -1,46 +1,46 @@
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Arial', sans-serif;
-    background-color: #ffe6f0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    overflow: hidden;
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    font-family: 'Arial', sans-serif; /* Set the font to Arial */
+    background-color: #ffe6f0; /* Light pink background color */
+    display: flex; /* Use Flexbox for layout */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    height: 100vh; /* Full viewport height */
+    overflow: hidden; /* Prevent scrolling */
 }
 
 .page-border {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
-    padding: 20px;
-    border: 10px solid transparent;
-    border-image: linear-gradient(45deg, pink, transparent 60%) 1; /* Wavy effect */
-    border-image-slice: 1;
+    position: relative; /* Position relative for inner elements */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    display: flex; /* Use Flexbox for layout */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    padding: 20px; /* Add padding around the content */
+    border: 10px solid transparent; /* Create a transparent border */
+    border-image: linear-gradient(45deg, pink, transparent 60%) 1; /* Wavy border effect */
+    border-image-slice: 1; /* Use the entire gradient for the border */
 }
 
 .envelope-wrapper {
-    text-align: center;
+    text-align: center; /* Center text within this container */
 }
 
 .envelope img {
-    width: 100px;
-    cursor: pointer;
+    width: 100px; /* Set the width of the envelope image */
+    cursor: pointer; /* Change cursor to pointer on hover */
 }
 
 .popup {
-    background-color: white;
-    border: 2px solid pink;
-    padding: 20px;
-    text-align: center;
-    display: none;
+    background-color: white; /* White background for the popup */
+    border: 2px solid pink; /* Pink border for the popup */
+    padding: 20px; /* Add padding inside the popup */
+    text-align: center; /* Center text inside the popup */
+    display: none; /* Hide popup by default */
 }
 
 .hidden {
-    display: none;
+    display: none; /* Class to hide elements */
 }
